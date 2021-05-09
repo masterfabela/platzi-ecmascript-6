@@ -1,10 +1,10 @@
 // Establecer valores por defecto
 // ES5
-function newFunction(name, age, country) {
-  var name = name || 'oscar';
+function newFunction(name2, age, country) {
+  let name = name2 || 'oscar';
   var age = age || 32;
   var country = country || 'ES';
-  console.log(name, age, country);
+  console.log(name2, age, country);
 }
 //ES6
 function newFunction2(name = 'oscar', age = 32, country = 'ES') {
@@ -66,3 +66,50 @@ console.log(globalVar);
 const a = 'b';
 // a = 'a';  no se puede
 console.log(a);
+
+// Asignacion de objetos mejorada
+let name2;
+// ES5
+var obj = {
+  name2: name2,
+  age: age,
+};
+console.log(obj);
+// ES6
+let obj2 = {
+  name2,
+  age,
+};
+console.log(obj2);
+
+// Funciones flecha
+const names = [
+  { name: 'Oscar', age: 32 },
+  {
+    name: 'Yesica',
+    age: 27,
+  },
+];
+// ES5
+let listOfNames = names.map(function (item) {
+  console.log(item.name);
+});
+// ES6
+listOfNames = names.map((item) => {
+  console.log(item.name);
+});
+const square = (num) => num * num;
+
+// Promesas
+const helloPromise = () => {
+  return new Promise((resolve, reject) => {
+    if (true) {
+      resolve('Hey!');
+    } else {
+      reject('Ups!');
+    }
+  });
+};
+helloPromise
+  .then((response) => console.log(response))
+  .catch((error) => console.log(error));
