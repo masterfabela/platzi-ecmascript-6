@@ -110,6 +110,40 @@ const helloPromise = () => {
     }
   });
 };
-helloPromise
+helloPromise()
   .then((response) => console.log(response))
   .catch((error) => console.log(error));
+
+// Clases
+class Calculator {
+  constructor() {
+    this.valueA = 0;
+    this.valueB = 0;
+  }
+  sum(valueA, valueB) {
+    this.valueA = valueA;
+    this.valueB = valueB;
+    return this.valueA + this.valueB;
+  }
+}
+const calc = new Calculator();
+console.log(calc.sum(2, 2));
+
+// Import y export, Trabajar con modulos
+/*
+import { hello as hello3 } from './module';
+console.log(hello3());
+*/
+
+// Generadores
+function* helloWorld() {
+  if (true) {
+    yield 'Hello, ';
+  }
+  if (true) {
+    yield 'World';
+  }
+}
+const generatorHello = helloWorld();
+console.log(generatorHello.next().value);
+console.log(generatorHello.next().value);
